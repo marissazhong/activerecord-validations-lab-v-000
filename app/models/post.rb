@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: { in: %w(Fiction Non-Fiction)}
   validate :is_clickbait
 
-  @@clickbait = ["Won't Believe", "Secret", "Top [number]", "Guess"]
+  @@clickbait = [/Won't Believe/i, /Secret/i, /Top [0-9]/i, /Guess/i]
 
   def is_clickbait
     if !@@clickbait.any? {|word| word.match title}
