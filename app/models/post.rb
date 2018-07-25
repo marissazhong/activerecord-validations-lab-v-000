@@ -7,4 +7,8 @@ class Post < ActiveRecord::Base
 
   clickbait = ["Won't Believe", "Secret", "Top [number]", "Guess"]
 
+  def is_clickbait
+
+  end
+
 end
